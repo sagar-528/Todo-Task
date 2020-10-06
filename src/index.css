@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  text-align: center;
+  
 }
+
+.Tabs {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f117;
+}
+
+.Tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+.Tabs button:hover {
+  background-color: #b4b4b4;
+}
+
+
