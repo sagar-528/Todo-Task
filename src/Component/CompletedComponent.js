@@ -1,7 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import NavbarComponent from './NavbarComponent';
-import {ButtonGroup, Grid, Typography, Checkbox} from '@material-ui/core'
+import {ButtonGroup, Grid, Typography} from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -39,11 +38,11 @@ function CompletedComponent() {
             <Grid container direction= 'column' spacing={2} style={{ marginTop: '1.1rem'}}>
             { todos.map(todo => {
               return (
-                <Grid item key={todo.id}>
+                <Grid item key={todo.id} style={{ textDecoration: todo.done ? 'line-through red' : 'none' }}>
                   <div style={{padding:'0.8rem', border: '2px solid #f0f0f0', borderRadius: '5px' }}>
                     <Grid container justify= 'space-between' alignItems= 'center'>
                       <Grid item>
-                        <Typography variant= 'h6' style={{ textDecoration: todo.done ? 'line-through red' : 'none' }}>
+                        <Typography variant= 'h6'>
                           Task: {todo.val}
                         </Typography>
                       </Grid> 
@@ -55,10 +54,10 @@ function CompletedComponent() {
                       </ButtonGroup>
                       </Grid>
                     </Grid>
-                    <Typography variant='subtitle1' style={{ textDecoration: todo.done ? 'line-through red' : 'none' }}>
+                    <Typography variant='subtitle1'>
                       Date: {todo.date}
                     </Typography>
-                    <Typography variant='subtitle1' style={{ textDecoration: todo.done ? 'line-through red' : 'none' }}>
+                    <Typography variant='subtitle1'>
                       CompelteDate : {todo.currentDate}
                   </Typography>
                   </div>

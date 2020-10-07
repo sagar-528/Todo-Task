@@ -1,5 +1,5 @@
 import React from 'react'
-import {ButtonGroup, Grid, Paper, Typography, FormControlLabel, Checkbox} from '@material-ui/core'
+import {ButtonGroup, Grid, Typography, Checkbox} from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 

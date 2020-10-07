@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import TodoListComponent from './Component/TodoListComponent'
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,7 +58,7 @@ const formik = useFormik({
 });
 
   const handleSubmit = (e) => {
-    const {todoText, taskDate, currentDate} = formik.values;
+    const {todoText, taskDate} = formik.values;
     setTodos([...todos,{ val: todoText, date: taskDate, id:uuidv4(), currentDate:getCurrentDate() }]);
     setIsDailogOpen(false); 
     formik.values.todoText = '';
@@ -72,22 +72,13 @@ const formik = useFormik({
     setTodos(newTodos.filter(t => t.id !== id));
   }
 
-  const handleMarkDone = (todo) =>{
-    const newTodos = [...todos];
-    const t = newTodos.find(t => t.id = todo.id);
-    t.done = !t.done;
-    setTodos(newTodos);
-  }
- 
-
   return (
     <div>
     <NavbarComponent todos={todos} /> 
     <CssBaseline />
     <Container>
-      <HeaderComponent handleFabClick={handleDailogOpen}/>
-      <TodoListComponent todos= {todos} handleDelete={handleDelete} 
-      handleMarkDone={handleMarkDone} />
+      <HeaderComponent handleFabClick={handleDailogOpen} />
+      <TodoListComponent todos= {todos} handleDelete={handleDelete}  />
     </Container>
     <FormDailogComponent 
     open= {isDailogOpen}

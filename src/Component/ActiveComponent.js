@@ -1,10 +1,10 @@
 import React from 'react'
-import {ButtonGroup, Grid, Typography, Checkbox, Radio} from '@material-ui/core'
+import {ButtonGroup, Grid, Typography, Checkbox} from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { Container } from '@material-ui/core'
-import NavbarComponent from './NavbarComponent';
+import NavbarComponent from './NavbarComponent'
 
 function useSessionStorage(key, defaultValue = '') 
 {
@@ -45,6 +45,7 @@ function ActiveComponent() {
         { todos.map(todo => {
             return (  
             <Container key={todo.id} style= { todo.done ? { display: 'none' } : { display: 'block' }}>
+            
                 <Grid container direction= 'column' spacing={2} style={{ marginTop: '1.1rem'}}>
                 <Grid item >
                   <div style={{ padding:'0.8rem', border: '2px solid #f0f0f0', borderRadius: '5px' }}>
