@@ -35,9 +35,11 @@ function CompletedComponent() {
         <NavbarComponent todos={todos}/>
             <CssBaseline />
             <Container>
-            <Grid container direction= 'column' spacing={2} style={{ marginTop: '1.1rem'}}>
             { todos.map(todo => {
               return (
+            <Grid container direction= 'column' spacing={2} style={ todo.done ? 
+              { marginTop: '1.1rem', display: 'block'}
+            : {display : 'none'}} >
                 <Grid item key={todo.id} style={{ textDecoration: todo.done ? 'line-through red' : 'none' }}>
                   <div style={{padding:'0.8rem', border: '2px solid #f0f0f0', borderRadius: '5px' }}>
                     <Grid container justify= 'space-between' alignItems= 'center'>
@@ -62,9 +64,8 @@ function CompletedComponent() {
                   </Typography>
                   </div>
                 </Grid>
-                )}
-              )}
-            </Grid> 
+            </Grid>
+            )})} 
             </Container>
         </div>
     )

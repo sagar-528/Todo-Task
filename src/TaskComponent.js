@@ -27,12 +27,7 @@ function TaskComponent() {
 
   const[todos, setTodos] = useSessionStorage("Todo",[]);
   const [isDailogOpen, setIsDailogOpen] = useState(false);
-  // const [checked, setChecked] = React.useState(true);
-
-  // const handleChange = (event) => {
-  //   setChecked(event.target.checked);
-  //   console.log();
-  // };
+ 
   
   const handleDailogOpen = () => {
     setIsDailogOpen(true);
@@ -59,7 +54,7 @@ const formik = useFormik({
 
   const handleSubmit = (e) => {
     const {todoText, taskDate} = formik.values;
-    setTodos([...todos,{ val: todoText, date: taskDate, id:uuidv4(), currentDate:getCurrentDate() }]);
+    setTodos([...todos, { val: todoText, date: taskDate, id: uuidv4(), currentDate: getCurrentDate() }]);
     setIsDailogOpen(false); 
     formik.values.todoText = '';
     formik.values.taskDate = "2020-05-24";
@@ -74,7 +69,7 @@ const formik = useFormik({
 
   return (
     <div>
-    <NavbarComponent todos={todos} /> 
+    <NavbarComponent todos={todos}/> 
     <CssBaseline />
     <Container>
       <HeaderComponent handleFabClick={handleDailogOpen} />
